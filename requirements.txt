@@ -1,0 +1,12 @@
+onnxruntime
+tqdm
+scipy
+scikit-learn
+requests
+faster-whisper
+sounddevice
+numpy
+claude-agent-sdk
+piper-tts
+PyQt6
+PyOpenGL
