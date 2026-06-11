@@ -1,0 +1,17 @@
+[Unit]
+Description=Jarvis Voice Assistant
+After=graphical-session.target sound.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/jarvis
+Environment=PATH=%h/jarvis/.venv/bin:%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+# Optional: ElevenLabs voice (otherwise local Piper is used)
+# Environment=ELEVENLABS_API_KEY=your_key_here
+ExecStart=%h/jarvis/.venv/bin/python %h/jarvis/jarvis.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
